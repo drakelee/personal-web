@@ -9,7 +9,7 @@ class MainLayout extends Component {
             <Fragment>
                 <MenuBar/>
                 <div>
-                    <Route path='/blog' component={BlogContainer}/>
+                    <Route path='/blogs' component={BlogContainer}/>
                 </div>
             </Fragment>
         )
