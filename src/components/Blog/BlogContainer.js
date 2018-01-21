@@ -8,13 +8,13 @@ class BlogContainer extends Component {
     render() {
         return (
             <Fragment>
-                <div>BlogContainer</div>
                 <Route
-                    path='/blog/:year/:month/:day/:title'
+                    // path='/blog/:year/:month/:day/:title'
+                    path={'/blogs/:id'}
                     component={BlogContentView}
                 />
                 <Route
-                    path='/blog/create'
+                    path='/blogs/create'
                     component={BlogCreate}
                 />
                 <NavigationButton to='/blog/create' text='Create'/>
