@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import TextFieldForm from '../Form/TextFieldForm'
+import BaseService from '../../services/BaseService'
 
 class BlogCreate extends Component {
     state = {
@@ -39,9 +40,15 @@ class BlogCreate extends Component {
         })
     }
 
-    onClick = e => {
+    onClick = async e => {
         e.preventDefault()
-        alert('create')
+        const {title, content} = this.state
+        let body = {
+            title,
+            content
+        }
+        let response = await BaseService.post(body)
+        alert(response)
     }
 }
 
