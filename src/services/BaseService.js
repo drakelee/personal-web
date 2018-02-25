@@ -1,6 +1,13 @@
 class BaseService {
-    async get(id) {
+    async getBlog(id) {
         let response = await fetch(`http://localhost:8080/blogs/${id}`)
+        if (response.status === 200) {
+            return await response.json()
+        }
+    }
+
+    async getBlogs() {
+        let response = await fetch('http://localhost:8080/blogs')
         if (response.status === 200) {
             return await response.json()
         }
