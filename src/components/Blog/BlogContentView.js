@@ -8,7 +8,7 @@ class BlogContentView extends Component {
 
     async componentDidMount() {
         let {match} = this.props
-        let blog = await BaseService.get(match.params.id)
+        let blog = await BaseService.getBlog(match.params.id)
         this.setState({blog})
     }
 
