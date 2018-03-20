@@ -3,7 +3,7 @@ import {Route, Switch} from 'react-router-dom'
 import BlogCreate from './BlogCreate'
 import BlogContentView from './BlogContentView'
 import BlogList from './BlogList'
-import NavigationButton from '../Button/NavigationButton'
+import NavigationButton from '../../Button/NavigationButton'
 
 class BlogContainer extends Component {
     render() {

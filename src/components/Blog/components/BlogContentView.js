@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react'
-import BaseService from '../../services/BaseService'
+import BaseService from '../../../services/BaseService'
 
 class BlogContentView extends Component {
     state = {

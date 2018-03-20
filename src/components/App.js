@@ -5,10 +5,16 @@ import './App.css'
 class App extends Component {
     render() {
         return (
-            <div>
+            <div style={style.container}>
                 <MainLayout/>
             </div>
         )
+    }
+}
+
+const style = {
+    container: {
+        backgroundColor: '#9E9E9E'
     }
 }
 

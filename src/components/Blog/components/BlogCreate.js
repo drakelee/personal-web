@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react'
-import TextFieldForm from '../Form/TextFieldForm'
-import BaseService from '../../services/BaseService'
+import TextFieldForm from '../../Form/TextFieldForm'
+import BaseService from '../../../services/BaseService'
 
 class BlogCreate extends Component {
     state = {
