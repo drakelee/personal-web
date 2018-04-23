@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react'
+import React, {Component} from 'react'
 import BaseService from '../../../services/BaseService'
 
 class BlogContentView extends Component {
@@ -15,12 +15,19 @@ class BlogContentView extends Component {
     render() {
         let {title, content, created_by} = this.state.blog
         return (
-            <Fragment>
-                <div>Title:{title}</div>
+            <div style={style.container}>
+                <div>{title}</div>
                 <div>By: {created_by}</div>
-                <div>Content:{content}</div>
-            </Fragment>
+                <div>{content}</div>
+            </div>
         )
+    }
+}
+
+const style = {
+    container: {
+        backgroundColor: 'white',
+        minWidth: 500
     }
 }
 

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 class BlogGridItem extends Component {
     state = {
@@ -11,20 +12,24 @@ class BlogGridItem extends Component {
     }
 
     render() {
-        let {title, content} = this.state.blog
+        let {id, title, content} = this.state.blog
 
         return (
             <div style={style.container}>
                 <div style={style.title}>{title}</div>
-                <div style={style.content}>{content}</div>
+                <div style={style.content}>{this.trimContent(content)}</div>
+                <Link to={`/blogs/${id}`}>Read more</Link>
             </div>
         )
+    }
+
+    trimContent(content) {
+        return content && content.length >= 200 ? `${content.substring(0, 200)}...` : content
     }
 }
 
 const style = {
     container: {
-        minHeight: 300,
         minWidth: 300,
         maxWidth: 400,
         padding: 15,
