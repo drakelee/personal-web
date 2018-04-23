@@ -24,18 +24,6 @@ class BlogList extends Component {
         )
     }
 
-    renderBlogs() {
-        let {blogs} = this.state
-
-        return blogs.map((blog, key) => {
-            return (
-                <div key={key}>
-                    <Link to={`/blogs/${blog.id}`}>{blog.title}</Link>
-                </div>
-            )
-        })
-    }
-
     renderBlogGridItems() {
         let {blogs} = this.state
 
