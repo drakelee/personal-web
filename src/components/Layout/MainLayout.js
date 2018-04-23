@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import {Route} from 'react-router-dom'
-import MenuBar from '../Menu/MenuBar'
+import MenuBar from '../Menu/components/MenuBar'
 import BlogContainer from '../Blog/components/BlogContainer'
 import MapsHome from '../Map/components/MapsHome'
 
