@@ -6,6 +6,7 @@ class MenuBar extends Component {
             <div>
                 <Link to='/home'>Home</Link>
                 <Link to='/blogs'>Blog</Link>
+                <Link to='/maps'>Maps</Link>
             </div>
         )
     }
