@@ -16,8 +16,13 @@ class MapsTypeAhead extends Component {
                 refs.searchBox = ref
             },
             handlePlacesChanged: () => {
+                let {onSearch} = this.props
                 const places = refs.searchBox.getPlaces()
                 this.setState({places})
+                let searchedPlace = places[0]
+                let lat = searchedPlace.geometry.location.lat()
+                let lng = searchedPlace.geometry.location.lng()
+                onSearch && onSearch(lat, lng)
             }
         })
     }

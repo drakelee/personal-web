@@ -4,7 +4,8 @@ import MapsTypeAhead from './MapsTypeAhead'
 
 class MapsView extends Component {
     state = {
-        markers: []
+        markers: [],
+        defaultCenter: {lat: -34.397, lng: 150.644}
     }
 
     render() {
@@ -12,12 +13,14 @@ class MapsView extends Component {
             <div>
                 <GoogleMap
                     defaultZoom={8}
-                    defaultCenter={{lat: -34.397, lng: 150.644}}
+                    center={this.getCenter()}
                     onRightClick={this.handleRightClick}
                 >
                     {this.renderMarkers()}
                 </GoogleMap>
-                <MapsTypeAhead/>
+                <MapsTypeAhead
+                    onSearch={this.handlePlaceMarker}
+                />
             </div>
         )
     }
@@ -34,6 +37,19 @@ class MapsView extends Component {
 
     handleRightClick = e => {
         this.setMarker(e.latLng.lat(), e.latLng.lng())
+    }
+
+    handlePlaceMarker = (lat, lng) => {
+        this.setMarker(lat, lng)
+    }
+
+    getCenter = () => {
+        let {defaultCenter, markers} = this.state
+        if (markers.length) {
+            return markers[markers.length-1]
+        } else {
+            return defaultCenter
+        }
     }
 
     setMarker(lat, lng) {
