@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {GoogleMap, Marker, withGoogleMap, withScriptjs} from 'react-google-maps'
+import MapsTypeAhead from './MapsTypeAhead'
 
 class MapsView extends Component {
     state = {
@@ -8,13 +9,16 @@ class MapsView extends Component {
 
     render() {
         return (
-            <GoogleMap
-                defaultZoom={8}
-                defaultCenter={{lat: -34.397, lng: 150.644}}
-                onRightClick={this.handleRightClick}
-            >
-                {this.renderMarkers()}
-            </GoogleMap>
+            <div>
+                <GoogleMap
+                    defaultZoom={8}
+                    defaultCenter={{lat: -34.397, lng: 150.644}}
+                    onRightClick={this.handleRightClick}
+                >
+                    {this.renderMarkers()}
+                </GoogleMap>
+                <MapsTypeAhead/>
+            </div>
         )
     }
 
