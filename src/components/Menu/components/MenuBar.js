@@ -8,6 +8,7 @@ class MenuBar extends Component {
                 <MenuItem anchorStyle={styles.menuItem} to='/home' title='Home'/>
                 <MenuItem anchorStyle={styles.menuItem} to='/blogs' title='Blog'/>
                 <MenuItem anchorStyle={styles.menuItem} to='/maps' title='Maps'/>
+                <MenuItem anchorStyle={styles.menuItem} to='/guestList' title='Guest List'/>
             </div>
         )
     }

@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
+const ENTER_KEY = 13
+
 class TextFieldForm extends Component {
     render() {
         let {name, placeholder, value} = this.props
@@ -10,14 +12,24 @@ class TextFieldForm extends Component {
                 name={name}
                 placeholder={placeholder}
                 value={value}
-                onChange={this.onChange}
+                onChange={this.handleChange}
+                onKeyDown={this.handleKeyDown}
             />
         )
     }
 
-    onChange = e => {
+    handleChange = e => {
         e.preventDefault()
-        this.props.onChange(e.target.name, e.target.value)
+        let {onChange} = this.props
+        onChange && onChange(e.target.name, e.target.value)
+    }
+
+    handleKeyDown = e => {
+        let {onEnter} = this.props
+        if (e.keyCode === ENTER_KEY) {
+            e.preventDefault()
+            onEnter && onEnter()
+        }
     }
 }
 
